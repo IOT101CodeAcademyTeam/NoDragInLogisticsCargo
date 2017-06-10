@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\IotDevice;
+use App\Models\IotDeviceData;
 use Illuminate\Routing\Controller;
 
 class IotDeviceDataController extends Controller {
@@ -33,9 +34,45 @@ class IotDeviceDataController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function adminStore()
+	public function adminStoreCsv()
 	{
-		//
+        // csv file as multidimensional array (rows)
+        $csvArr = array();
+        if (($handle = fopen("car.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ";", '"')) !== FALSE) {
+                $csvArr[] = $data;
+            }
+            fclose($handle);
+        }
+
+        // replaces spaces with _ and removes unused symbols like db columns
+        foreach ($csvArr[0] as $key => $item) {
+            $item = strtolower($item);
+            $item = str_replace(' ', '_', $item);
+            $item = str_replace(array( '(', ')' ), '', $item);
+            $csvArr[0][$key] = $item;
+        }
+
+
+        // assignes csv column row as keys and forms new array
+        $sqlArr = [];
+        for($i = 1; $i < sizeOf($csvArr); $i++) {
+            array_push($sqlArr, array_combine($csvArr[0], $csvArr[$i]));
+        }
+
+        // generates id and device_id for each entry and adds to arrays
+        foreach($sqlArr as $key => $data) {
+
+            $data['imei'] = '1111111111111';
+            $data['id'] = $key;
+            $sqlArr[$key] = $data;
+        }
+
+        for($i = 0; $i < sizeOf($sqlArr); $i++){
+
+        $record = IotDeviceData::create($sqlArr[$i]);
+        $record->deviceConnData()->sync($sqlArr[$i]['imei']);
+        }
 	}
 
 	/**
