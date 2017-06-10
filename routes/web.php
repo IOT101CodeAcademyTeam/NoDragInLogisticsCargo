@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('admin.adminDevices');
 });
 
+Route::get('/api', ['as' => 'app.api.index', 'uses' => 'ApiController@saveApiData']);
+Route::get('/apistore', ['as' => 'app.api.store', 'uses' => 'ApiController@store']);
+
 Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'devices'], function () {
