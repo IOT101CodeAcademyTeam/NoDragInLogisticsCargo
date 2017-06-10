@@ -16,8 +16,8 @@ class CreateIotDeviceDataConnTable extends Migration {
 		{
 			$table->integer('count', true);
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-			$table->string('device_imei', 36)->index('fk_iot_device_data_conn_iot_device1_idx');
-			$table->string('data_id')->index('fk_iot_device_data_conn_iot_device_data_idx');
+			$table->string('device_imei')->index('fk_iot_device_data_conn_iot_device1_idx');
+			$table->string('data_id', 36)->index('fk_iot_device_data_conn_iot_device_data_idx');
 		});
 	}
 
