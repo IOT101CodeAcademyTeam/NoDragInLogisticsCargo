@@ -13,7 +13,7 @@ class IotDeviceDataController extends Controller {
 	 */
 	public function adminIndex()
 	{
-		//
+        return view('admin.adminData');
 	}
 
 	/**
