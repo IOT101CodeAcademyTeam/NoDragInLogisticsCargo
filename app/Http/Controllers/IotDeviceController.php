@@ -13,7 +13,11 @@ class IotDeviceController extends Controller {
 	 */
 	public function adminIndex()
 	{
-		return view('admin.adminDevices');
+        $configuration=[];
+        $configuration ['showDelete'] = 'app.admin.devices.showDelete';
+        $configuration ['list'] = IotDevice::get()->toArray();
+
+		return view('admin.adminDevices',$configuration );
 	}
 
 	/**
