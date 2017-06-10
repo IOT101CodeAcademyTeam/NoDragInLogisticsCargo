@@ -15,7 +15,8 @@ class IotDevice extends CoreModel
      * Fields which will be manipulated
      * @var array
      */
-    protected $fillable = ['imei', 'name', 'id'];
+
+    protected $fillable = ['imei','name','id'];
 
     protected $hidden = ['deleted_at', 'pivot'];
 
