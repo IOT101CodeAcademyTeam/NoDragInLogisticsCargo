@@ -14,6 +14,7 @@ class IotDevicesSeeder extends Seeder
     public function run()
     {
         $devices = [
+
             ["name" => "050963", "id" => "3972", "imei" => "354293061600477"],
             ["name" => "Code_Academy", "id" => "3973", "imei" => "354293066758023"],
             ["name" => "050953", "id" => "3974", "imei" => "354293064875258"],

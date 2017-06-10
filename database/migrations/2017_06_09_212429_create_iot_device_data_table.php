@@ -31,6 +31,7 @@ class CreateIotDeviceDataTable extends Migration {
 			$table->string('latitude')->nullable();
 			$table->string('longitude')->nullable();
 			$table->string('infrared')->nullable();
+            $table->string('model_id', 36);
 		});
 	}
 
