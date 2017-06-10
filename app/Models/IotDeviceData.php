@@ -15,5 +15,5 @@ class IotDeviceData extends CoreModel
      * @var array
      */
     protected $fillable = ['id','date','time','speed','temperature_a','humidity_a','running',
-        'gsm_signal_strength','satellites','odometer_server','battery_voltage','latitude','longitude','infrared'];
+        'gsm_signal_strength','satellites','odometer_server','battery_voltage','latitude','longitude'];
 }
