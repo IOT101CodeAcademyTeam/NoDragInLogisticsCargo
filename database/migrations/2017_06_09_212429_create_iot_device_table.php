@@ -18,6 +18,8 @@ class CreateIotDeviceTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('imei')->unique('imei_UNIQUE');
+			$table->string('id');
+			$table->string('name');
 		});
 	}
 
