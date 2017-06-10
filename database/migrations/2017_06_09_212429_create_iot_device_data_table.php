@@ -20,17 +20,18 @@ class CreateIotDeviceDataTable extends Migration {
 			$table->softDeletes();
 			$table->date('date');
 			$table->time('time');
-			$table->integer('speed')->nullable();
+			$table->string('speed')->nullable();
 			$table->string('temperature_a')->nullable();
-			$table->float('humidity_a', 10, 0)->nullable();
-			$table->integer('running')->nullable();
-			$table->integer('gsm_signal_strength')->nullable();
-			$table->integer('satellites')->nullable();
+			$table->string('humidity_a')->nullable();
+			$table->string('running')->nullable();
+			$table->string('gsm_signal_strength')->nullable();
+			$table->string('satellites')->nullable();
 			$table->string('odometer_server')->nullable();
-			$table->integer('battery_voltage')->nullable();
+			$table->string('battery_voltage')->nullable();
 			$table->string('latitude')->nullable();
 			$table->string('longitude')->nullable();
 			$table->string('infrared')->nullable();
+            $table->string('model_id', 36);
 		});
 	}
 

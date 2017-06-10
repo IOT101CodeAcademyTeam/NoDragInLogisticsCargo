@@ -18,10 +18,16 @@ html, body {
 }
 main {
     height: 100%;
+    padding-left: 270px;
 }
 #list {
     width: 100%;
-    padding-left: 270px;
     height: 100%;
     padding-top: 30px;
+}
+.single {
+    padding-top: 30px;
+}
+.container {
+    padding-left: 0px;
 }
