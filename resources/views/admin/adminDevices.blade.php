@@ -10,10 +10,24 @@
 
                 @if(sizeof($list)>0)
                     <thead>
-                    <tr>
-                        @foreach($list[0] as $key => $value)
-                            <th>{{$key}}</th>
-                        @endforeach
+                    <tr><th>
+                            Nr
+                        </th>
+                        <th>
+                            Created
+                        </th>
+                        <th>
+                            Updated
+                        </th>
+                        <th>
+                            IMEI
+                        </th>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
 
                     </tr>
 
@@ -30,7 +44,7 @@
                             @if(isset($showDelete))
 
                                 <td><a href="{{route($showDelete, $record['imei'])}}"
-                                       class="btn btn-primary btn-sm">View</a>
+                                       class="btn btn-primary btn-sm">View device data</a>
                                 </td>
                             @endif
 
