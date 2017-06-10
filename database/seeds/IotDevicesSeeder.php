@@ -18,7 +18,8 @@ class IotDevicesSeeder extends Seeder
             ["name" => "Code_Academy", "id" => "3973", "imei" => "354293066758023"],
             ["name" => "050953", "id" => "3974", "imei" => "354293064875258"],
             ["name" => "Parcel Condition", "id" => "3975", "imei" => "354293066751473"],
-            ["name" => "050891", "id" => "3977", "imei" => "354293066749253"]
+            ["name" => "050891", "id" => "3977", "imei" => "354293066749253"],
+            ["name" => "test", "id" => "test", "imei" => "1111111111111"]
         ];
 
 
