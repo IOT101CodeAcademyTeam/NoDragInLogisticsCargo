@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\IotDevice;
 use Illuminate\Routing\Controller;
 
 class IotDeviceDataController extends Controller {
@@ -58,7 +59,7 @@ class IotDeviceDataController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		//IotDevice::get()->toArray();
 	}
 
 	/**
