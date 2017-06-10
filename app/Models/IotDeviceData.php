@@ -9,7 +9,7 @@ class IotDeviceData extends CoreModel
      * @var string
      */
     protected $table = 'iot_device_data';
-
+    protected $hidden = ['id', 'deleted_at', 'infrared', 'running', 'gsm_signal_strength', 'satellites', 'battery_voltage'];
 
     /**
      * Fields which will be manipulated

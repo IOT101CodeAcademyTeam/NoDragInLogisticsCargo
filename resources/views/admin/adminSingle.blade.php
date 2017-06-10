@@ -1,34 +1,35 @@
-@extends('admin.adminSingle')
+@extends('admin.adminCore')
 
 @section('content')
+<div class="single">
     <p>Name: {{$device['name']}}</p>
     <p>IMEI: {{$device['imei']}}</p>
     <p>ID: {{$device['id']}}</p>
-    {{dd($device)}}
     <div class="container">
-        <h2>labas</h2>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    @foreach($device as $key => $value)
-                        <th>{{$key}}</th>
-                    @endforeach
+                    <th>Nr.</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Speed</th>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Odometer server</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     @foreach($device['device_conn_data'][0] as $key => $data)
-
-                        @if($key == 'pivot')
-                            labas
-                            @else
-                            <td>{{$key, $data}}</td>
-                        @endif
-
+                            <td>{{$data}}</td>
                     @endforeach
                 </tr>
             </tbody>
         </table>
     </div>
-
+</div>
 @endsection

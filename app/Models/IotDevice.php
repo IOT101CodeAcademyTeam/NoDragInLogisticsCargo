@@ -21,7 +21,6 @@ class IotDevice extends CoreModel
 
 
     public function deviceConnData(){
-        /*return $this->belongsToMany(IotDeviceData::class, 'iot_device_data_conn', 'device_imei', 'data_id');*/
-        return $this->belongsToMany(IotDeviceDataConn::class, 'iot_device_data_conn', 'device_imei', 'data_id')->with(['deviceData']);
+        return $this->belongsToMany(IotDeviceData::class, 'iot_device_data_conn', 'device_imei', 'data_id');
     }
 }
