@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+#menu {
+    height: 100%;
+    position: fixed;
+    background-color: #222d32;
+    width: 230px;
+    color: #b8c7ce;
+    padding: 10px 30px;
+}
+#menu a {
+    color: #a7b1c2;
+    font-size: 17px;
+    line-height: 27px;
+}
+main {
+    height: 100%;
+}
+#list {
+    background-color: #f3f3f4;
+    width: 100%;
+    padding-left: 270px;
+    height: 100%;
+}

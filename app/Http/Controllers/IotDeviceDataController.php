@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Models\IotDeviceData;
+use App\Models\IotDevice;
 use Illuminate\Routing\Controller;
 
 class IotDeviceDataController extends Controller {
@@ -24,19 +24,18 @@ class IotDeviceDataController extends Controller {
 	 */
 	public function adminCreate()
 	{
-
-
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 * POST /iotdevicedata
 	 *
-	 * @return mixed
-     * 	 */
+	 * @return Response
+	 */
 	public function adminStore()
 	{
-     //
+		//
 	}
 
 	/**
@@ -60,7 +59,7 @@ class IotDeviceDataController extends Controller {
 	 */
 	public function adminEdit($id)
 	{
-		//
+		//IotDevice::get()->toArray();
 	}
 
 	/**
