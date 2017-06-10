@@ -3,7 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Http\Controllers\ApiController;
+use App\Models\IotDeviceData;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Cache;
 
 class GetApi extends Command
 {
@@ -47,8 +49,9 @@ class GetApi extends Command
        $api = new ApiController();
 
 
-        cache()->put('test',$api->saveApiData(),120);
-
+        cache()->put('test',$api->saveApiData(),60);
+        $value = Cache::get('test');
+        IotDeviceData::create($value);
 
 
     }

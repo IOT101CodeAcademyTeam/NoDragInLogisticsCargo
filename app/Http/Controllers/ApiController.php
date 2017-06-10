@@ -65,10 +65,10 @@ class ApiController extends Controller {
         // return $iot101Keys;
 
         // TODO reset keys in similar manner according to api manual and our database
-        $apiArr['server_time'] = $apiArr['0'];
+        $apiArr['date'] = date("Y-m-d",$apiArr['1']);
         unset($apiArr['0']);
 
-        $apiArr['time'] = $apiArr['1'];
+        $apiArr['time'] =date("H:i:s",$apiArr['1']);
         unset($apiArr['1']);
 
         $apiArr['latitude'] = $apiArr['2'];
@@ -134,6 +134,9 @@ class ApiController extends Controller {
         $apiArr['digital_input3'] = $apiArr['402'];
         unset($apiArr['402']);
 
+        $apiArr['model_id'] = $apiArr['id'];
+        unset($apiArr['id']);
+
         $newArray = [];
         foreach ($apiArr as $key => $value)
             if(in_array($key, $iot101->getFillable()))
@@ -171,8 +174,7 @@ class ApiController extends Controller {
 	 */
 	public function store()
     {
-        $value = Cache::get('test');
-        dd($value);
+
     }
 
 
