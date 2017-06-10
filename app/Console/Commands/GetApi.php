@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Console\Command;
 
 class GetApi extends Command
@@ -43,6 +44,12 @@ class GetApi extends Command
         $collection->put('price', 100);
 
         $collection->all();*/
-        cache()->put('test',str_random(20),'test2', str_random(10)  );
+       $api = new ApiController();
+
+
+        cache()->put('test',$api->saveApiData(),120);
+
+
+
     }
 }

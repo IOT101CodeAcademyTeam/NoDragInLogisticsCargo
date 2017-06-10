@@ -68,7 +68,7 @@ class ApiController extends Controller {
         $apiArr['server_time'] = $apiArr['0'];
         unset($apiArr['0']);
 
-        $apiArr['device_time'] = $apiArr['1'];
+        $apiArr['time'] = $apiArr['1'];
         unset($apiArr['1']);
 
         $apiArr['latitude'] = $apiArr['2'];
@@ -101,13 +101,13 @@ class ApiController extends Controller {
         $apiArr['charging'] = $apiArr['115'];
         unset($apiArr['115']);
 
-        $apiArr['GSM_signal_strenght'] = $apiArr['130'];
+        $apiArr['gsm_signal_strength'] = $apiArr['130'];
         unset($apiArr['130']);
 
         $apiArr['network_operator'] = $apiArr['131'];
         unset($apiArr['131']);
 
-        $apiArr['odometer'] = $apiArr['136'];
+        $apiArr['odometer_server'] = $apiArr['136'];
         unset($apiArr['136']);
 
         $apiArr['satellites'] = $apiArr['138'];
@@ -119,10 +119,10 @@ class ApiController extends Controller {
         $apiArr['???'] = $apiArr['190'];
         unset($apiArr['190']);
 
-        $apiArr['temperature'] = $apiArr['200'];
+        $apiArr['temperature_a'] = $apiArr['200'];
         unset($apiArr['200']);
 
-        $apiArr['humidity'] = $apiArr['220'];
+        $apiArr['humidity_a'] = $apiArr['220'];
         unset($apiArr['220']);
 
         $apiArr['digital_input1'] = $apiArr['400'];
@@ -134,9 +134,16 @@ class ApiController extends Controller {
         $apiArr['digital_input3'] = $apiArr['402'];
         unset($apiArr['402']);
 
+        $newArray = [];
+        foreach ($apiArr as $key => $value)
+            if(in_array($key, $iot101->getFillable()))
+            $newArray[$key] = $value;
 
 
-        return $apiArr;
+
+
+
+        return $newArray;
 
 
 
@@ -163,9 +170,11 @@ class ApiController extends Controller {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
-	}
+    {
+        $value = Cache::get('test');
+        dd($value);
+    }
+
 
 	/**
 	 * Display the specified resource.
