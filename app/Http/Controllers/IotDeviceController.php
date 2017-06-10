@@ -13,7 +13,7 @@ class IotDeviceController extends Controller {
 	 */
 	public function adminIndex()
 	{
-		//
+		return view('admin.adminDevices');
 	}
 
 	/**
