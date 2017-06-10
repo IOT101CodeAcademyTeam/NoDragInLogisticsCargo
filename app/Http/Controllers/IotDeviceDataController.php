@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\IotDevice;
 use Illuminate\Routing\Controller;
 
 class IotDeviceDataController extends Controller {
@@ -10,7 +11,7 @@ class IotDeviceDataController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function adminIndex()
 	{
 		//
 	}
@@ -21,7 +22,7 @@ class IotDeviceDataController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function adminCreate()
 	{
 		//
 	}
@@ -32,7 +33,7 @@ class IotDeviceDataController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function adminStore()
 	{
 		//
 	}
@@ -44,7 +45,7 @@ class IotDeviceDataController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function adminShow($id)
 	{
 		//
 	}
@@ -56,9 +57,9 @@ class IotDeviceDataController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function adminEdit($id)
 	{
-		//
+		//IotDevice::get()->toArray();
 	}
 
 	/**
@@ -68,7 +69,7 @@ class IotDeviceDataController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function adminUpdate($id)
 	{
 		//
 	}
@@ -80,7 +81,7 @@ class IotDeviceDataController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function adminDestroy($id)
 	{
 		//
 	}
