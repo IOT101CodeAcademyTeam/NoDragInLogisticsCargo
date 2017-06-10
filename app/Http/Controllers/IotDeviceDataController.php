@@ -65,6 +65,7 @@ class IotDeviceDataController extends Controller {
 
             $data['imei'] = '1111111111111';
             $data['id'] = $key;
+            $data['model_id'] = '9999';
             $sqlArr[$key] = $data;
         }
 

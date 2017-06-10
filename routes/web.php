@@ -41,8 +41,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/storecsv', ['uses' => 'IotDeviceDataController@adminStoreCsv']);
         Route::group(['prefix' => '{id}'], function () {
             Route::get('/', ['uses' => 'IotDeviceDataController@adminShow']);
-            Route::get('/edit/{lang}', ['as' => 'app.admin.data.edit', 'uses' => 'IotDeviceDataController@adminEdit']);
-            Route::post('/edit/{lang}', ['uses' => 'IotDeviceDataController@adminUpdate']);
+            Route::get('/edit/', ['as' => 'app.admin.data.edit', 'uses' => 'IotDeviceDataController@adminEdit']);
+            Route::post('/edit/', ['uses' => 'IotDeviceDataController@adminUpdate']);
             Route::delete('/', ['as' => 'app.admin.data.showDelete', 'uses' => 'IotDeviceDataController@adminDestroy']);
         });
     });
