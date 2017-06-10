@@ -18,7 +18,6 @@ class CreateIotDeviceDataTable extends Migration {
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string('device_id', 36);
 			$table->date('date');
 			$table->time('time');
 			$table->integer('speed')->nullable();
@@ -29,7 +28,8 @@ class CreateIotDeviceDataTable extends Migration {
 			$table->integer('satellites')->nullable();
 			$table->string('odometer_server')->nullable();
 			$table->integer('battery_voltage')->nullable();
-			$table->string('coordinates')->nullable();
+			$table->string('latitude')->nullable();
+			$table->string('longitude')->nullable();
 			$table->string('infrared')->nullable();
 		});
 	}
