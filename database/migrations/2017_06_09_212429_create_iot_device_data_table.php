@@ -21,7 +21,7 @@ class CreateIotDeviceDataTable extends Migration {
 			$table->date('date');
 			$table->time('time');
 			$table->integer('speed')->nullable();
-			$table->float('temperature_a', 10, 0)->nullable();
+			$table->string('temperature_a')->nullable();
 			$table->float('humidity_a', 10, 0)->nullable();
 			$table->integer('running')->nullable();
 			$table->integer('gsm_signal_strength')->nullable();
