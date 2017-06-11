@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\ApiController;
+use App\Models\IotDeviceData;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Cache;
 
 class GetApi extends Command
 {
@@ -43,6 +46,13 @@ class GetApi extends Command
         $collection->put('price', 100);
 
         $collection->all();*/
-        cache()->put('test',str_random(20),'test2', str_random(10)  );
+       $api = new ApiController();
+
+
+        cache()->put('test',$api->saveApiData(),60);
+        $value = Cache::get('test');
+        IotDeviceData::create($value);
+
+
     }
 }

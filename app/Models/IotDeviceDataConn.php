@@ -12,9 +12,15 @@ class IotDeviceDataConn extends Model
      */
     protected $table = 'iot_device_data_conn';
 
+
     /**
      * Fields which will be manipulated
      * @var array
      */
     protected $fillable = ['device_imei', 'data_id'];
+
+    public function deviceData()
+    {
+        return $this->hasOne(IotDeviceData::class, 'data_id', 'id');
+    }
 }
