@@ -10,8 +10,6 @@
             <thead>
                 <tr>
                     <th>Nr.</th>
-                    <th>Created</th>
-                    <th>Updated</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Speed</th>
@@ -20,14 +18,22 @@
                     <th>Odometer server</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
+                    <th>Model ID</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach($device['device_conn_data'][0] as $key => $data)
-                            <td>{{$data}}</td>
+                    @foreach($device['device_conn_data'] as $data)
+                        <tr>
+                        @foreach($data as $key => $value)
+
+                            @if($key == 'pivot')
+                            @else
+                                <td>{{$value}}</td>
+                            @endif
+
+                            @endforeach
+                        </tr>
                     @endforeach
-                </tr>
             </tbody>
         </table>
     </div>

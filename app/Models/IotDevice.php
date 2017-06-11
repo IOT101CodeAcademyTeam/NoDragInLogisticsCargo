@@ -21,7 +21,7 @@ class IotDevice extends CoreModel
     protected $hidden = ['deleted_at', 'pivot'];
 
 
-    public function deviceConnData2(){
+    public function deviceConnData(){
         return $this->belongsToMany(IotDeviceData::class, 'iot_device_data_conn', 'device_imei', 'data_id');
     }
 }

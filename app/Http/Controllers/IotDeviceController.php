@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\IotDevice;
+use App\Models\IotDeviceData;
 use Illuminate\Routing\Controller;
 
 class IotDeviceController extends Controller {
@@ -50,9 +51,7 @@ class IotDeviceController extends Controller {
 	 */
 	public function adminShow($id)
 	{
-        $data['device'] = IotDevice::with('deviceConnData2')->find($id)->toArray();
-        /*dd($data['device']);*/
-        array_pop($data['device']['device_conn_data2'][0]);
+        $data['device'] = IotDevice::with('deviceConnData')->find($id)->toArray();
 
         return view('admin.adminSingle', $data);
 	}
