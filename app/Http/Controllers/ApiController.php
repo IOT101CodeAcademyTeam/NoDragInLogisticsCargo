@@ -143,10 +143,15 @@ class ApiController extends Controller {
             $newArray[$key] = $value;
 
 
+        $config = [];
+        $config['imei'] = $apiArr['imei'];
+        $config['json'] = $newArray;
 
 
 
-        return $newArray;
+
+
+        return $config;
 
 
 
