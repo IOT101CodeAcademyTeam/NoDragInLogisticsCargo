@@ -2,9 +2,11 @@
 
 @section('content')
 <div class="single">
+
     <p>Name: {{$device['name']}}</p>
     <p>IMEI: {{$device['imei']}}</p>
     <p>ID: {{$device['id']}}</p>
+    <a href="{{route($route)}}" class="btn btn-primary btn-sm">Back</a>
     <div class="container">
         <table class="table table-hover">
             <thead>

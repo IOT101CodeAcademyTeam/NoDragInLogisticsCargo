@@ -52,7 +52,7 @@ class IotDeviceController extends Controller {
 	public function adminShow($id)
 	{
         $data['device'] = IotDevice::with('deviceConnData')->find($id)->toArray();
-
+        $data['route'] = 'app.admin.devices.index';
         return view('admin.adminSingle', $data);
 	}
 
