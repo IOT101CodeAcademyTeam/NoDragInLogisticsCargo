@@ -33,7 +33,6 @@ Route::group(['prefix' => 'admin'], function () {
         });
     });
 
-
     Route::group(['prefix' => 'data'], function () {
         Route::get('/', ['as' => 'app.admin.data.index', 'uses' => 'IotDeviceDataController@adminIndex']);
         Route::get('/create', ['as' => 'app.admin.data.create', 'uses' => 'IotDeviceDataController@adminCreate']);
