@@ -16,7 +16,7 @@ class IotDeviceData extends CoreModel
      * @var array
      */
 
-    protected $fillable = ['model_id','date','time','speed','temperature_a','humidity_a','running',
+    protected $fillable = ['id','date','time','speed','temperature_a','humidity_a','running','model_id',
         'gsm_signal_strength','satellites','odometer_server','battery_voltage','latitude','longitude'];
 
     public function deviceConnData(){
