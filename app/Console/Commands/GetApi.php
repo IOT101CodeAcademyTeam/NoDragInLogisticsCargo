@@ -41,17 +41,14 @@ class GetApi extends Command
     public function handle()
     {
 
-       /* $collection = collect(['product_id' => 1, 'name' => 'Desk']);
 
-        $collection->put('price', 100);
-
-        $collection->all();*/
        $api = new ApiController();
 
 
         cache()->put('test',$api->saveApiData(),60);
         $value = Cache::get('test');
-        IotDeviceData::create($value);
+        $record = IotDeviceData::create($value['json']);
+        $record->deviceConnData()->sync($value['imei']);
 
 
     }
