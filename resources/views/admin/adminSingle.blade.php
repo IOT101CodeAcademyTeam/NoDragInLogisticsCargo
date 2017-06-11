@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="single">
+
     <p>Name: {{$device['name']}}</p>
     <p>IMEI: {{$device['imei']}}</p>
     <p>ID: {{$device['id']}}</p>
+    <a href="{{route($route)}}" class="btn btn-primary btn-sm">Back</a>
     <div class="container">
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Nr.</th>
-                    <th>Created</th>
-                    <th>Updated</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Speed</th>
@@ -20,14 +20,22 @@
                     <th>Odometer server</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
+                    <th>Model ID</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach($device['device_conn_data'][0] as $key => $data)
-                            <td>{{$data}}</td>
+                    @foreach($device['device_conn_data'] as $data)
+                        <tr>
+                        @foreach($data as $key => $value)
+
+                            @if($key == 'pivot')
+                            @else
+                                <td>{{$value}}</td>
+                            @endif
+
+                            @endforeach
+                        </tr>
                     @endforeach
-                </tr>
             </tbody>
         </table>
     </div>
